@@ -1,5 +1,10 @@
 class PuppiesController < ApplicationController
    
+    configure do
+        set :views, 'app/views'
+        set :method_override, true
+      end
+      
     # display list of all the puppies
     get '/puppies' do 
         @puppies = Puppy.all
